@@ -1,0 +1,7 @@
+{
+  "title": "Smooth Wallpaper",
+  "type": "web",
+  "visibility": "public",
+  "preview": "preview.jpg",
+  "file": "dist/index.html"
+}
