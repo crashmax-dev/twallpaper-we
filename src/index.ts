@@ -1,4 +1,5 @@
-import { TWallpaper, TWallpaperOptions } from 'twallpaper'
+import { TWallpaper } from 'twallpaper'
+import type { TWallpaperOptions } from 'twallpaper'
 import 'twallpaper/css'
 
 declare global {
@@ -9,12 +10,18 @@ declare global {
   }
 }
 
-const app = document.querySelector('#app')!
-const wallpaper = new TWallpaper(app)
-wallpaper.init({ colors: wallpaper.generateColors() })
+window.addEventListener('DOMContentLoaded', bootstrap)
 
-window.wallpaperPropertyListener = {
-  applyUserProperties: (options) => {
-    wallpaper.init({ ...options })
+function bootstrap() {
+  const app = document.querySelector('#app')!
+  const wallpaper = new TWallpaper(app)
+  wallpaper.init({
+    colors: wallpaper.generateColors()
+  })
+
+  window.wallpaperPropertyListener = {
+    applyUserProperties: (options) => {
+      wallpaper.init({ ...options })
+    }
   }
 }
