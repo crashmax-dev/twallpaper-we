@@ -2,8 +2,10 @@ import { readFile, writeFile } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, resolve } from 'node:path'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-const file = resolve(__dirname, '..', 'dist', 'index.html')
+const file = resolve(
+  dirname(fileURLToPath(import.meta.url)),
+  '..', 'dist', 'index.html'
+)
 
 readFile(file, (err, value) => {
   if (err) throw err

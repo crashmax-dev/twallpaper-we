@@ -1,4 +1,4 @@
-const BASE_PATH = location.href + 'patterns/'
+const BASE_PATH = location.href.replace('index.html', '') + 'patterns/'
 
 export const patterns = [
   {
